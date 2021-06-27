@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.olbring</groupId>
+    <artifactId>SnakeGame</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>MVC 1.0 Blank Project (from https://github.com/making/mvc-1.0-blank)</name>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+		<dependency>
+		   <groupId>org.apache.commons</groupId>
+		   <artifactId>commons-lang3</artifactId>
+		   <version>3.12.0</version>
+		</dependency>
+    </dependencies>
+    <build>
+
+        <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-war-plugin</artifactId>-->
+<!--                <version>2.3</version>-->
+<!--                <configuration>-->
+<!--                    <failOnMissingWebXml>false</failOnMissingWebXml>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.olbring.SnakeGame.Main</mainClass>
+                        </manifest>
+                        <manifestEntries>
+<!--                            <SplashScreen-Image>com/dscsag/dsct2c/resources/icons/loader/splash_screen.png</SplashScreen-Image>-->
+<!--                            <SCM-Revision>${buildNumber}</SCM-Revision>-->
+                            <Project-Version>${project.version}</Project-Version>
+                            <Build-Date>${maven.build.timestamp}</Build-Date>
+                            <Project-Name>${project.artifactId}_${project.version}</Project-Name>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
