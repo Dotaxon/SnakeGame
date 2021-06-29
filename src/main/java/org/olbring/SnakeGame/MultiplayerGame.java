@@ -68,12 +68,14 @@ public class MultiplayerGame extends Game {
 
             //Player 1 Apfel gefressen
             if (checkApple() == 1) {
+                ++p1score;
                 spwanApple();
                 isP1AddMove = true;
             }
 
             //Player 2 Apfel gefressen
             if (checkApple() == 2 ){
+                ++p2score;
                 spwanApple();
                 isP2AddMove = true;
             }
@@ -221,17 +223,15 @@ public class MultiplayerGame extends Game {
      */
     private byte checkApple(){
 
-
         //Player 1
-        if(p1Head.getRow() == apple.getRow() && p1Head.getColumn() == apple.getColumn()){
-            p1score++; //erhöht den scroe
+        if(p1Head.getRow() == apple.getRow() && p1Head.getColumn() == apple.getColumn())
             return 1;
-        }
+
+
         //Player 2
-        if(p2Head.getRow() == apple.getRow() && p2Head.getColumn() == apple.getColumn()){
-            p2score++; //erhöht den scroe
+        if(p2Head.getRow() == apple.getRow() && p2Head.getColumn() == apple.getColumn())
             return 2;
-        }
+
 
         return 0;
     }
