@@ -161,7 +161,7 @@ public class GUI extends JFrame {
 
 	//Wenn Play Button (JToggleButton) gedrückt starte spiel
 	void checkBtnPlay(){
-	boolean isSelected;  //speichert den Zustand des Play Buttons, er ist ein Toggle Button
+		boolean isSelected;  //speichert den Zustand des Play Buttons, er ist ein Toggle Button
 		while (true) {
 			isSelected = btnPlay.isSelected(); //Holt sich den zustand des Play Buttons
 
